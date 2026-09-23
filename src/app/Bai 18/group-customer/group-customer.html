@@ -1,0 +1,36 @@
+<p>group-customer works!</p>
+@if (errMessage()) {
+  <p style="color: red;">{{ errMessage() }}</p>
+}
+
+<div style="display: inline-block;">
+  <table border="1" width="100%">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>#</th>
+    </tr>
+
+    @for (group of customerGroups(); track group.CustomerTypeId) {
+      <tr>
+        <td colspan="5">
+          {{ group.CustomerTypeId }} - {{ group.CustomterTypeName }}
+        </td>
+      </tr>
+
+      @for (c of group.Customers; track c.Id) {
+        <tr>
+          <td>{{ c.Id }}</td>
+          <td>{{ c.Name }}</td>
+          <td>{{ c.Email }}</td>
+          <td>{{ c.Age }}</td>
+          <td>
+            <img [src]="c.Image" width="100" height="100" />
+          </td>
+        </tr>
+      }
+    }
+  </table>
+</div>

@@ -7,6 +7,8 @@ import { ProductListCallHttpServiceComponent } from './product-list-call-http-se
 import { ProductHttpHandleErrorServiceComponent } from './product-http-handle-error-service-component/product-http-handle-error-service-component';
 import { ServiceProductImageEvent } from './Bai13/service-product-image-event/service-product-image-event';
 import { ServiceProductImageEventDetail } from './Bai13/service-product-image-event-detail/service-product-image-event-detail';
+import { Catalog } from './Bai 14/catalog/catalog';
+import { GroupCustomer } from './Bai 18/group-customer/group-customer';
 
 const routes: Routes = [
   {path:"", redirectTo:"service-product-image-event", pathMatch:"full"},
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path:"product-http-handle-error-service",component:ProductHttpHandleErrorServiceComponent},
   {path:'service-product-image-event', component:ServiceProductImageEvent},
   {path:'service-product-image-event/:id', component:ServiceProductImageEventDetail},
+  {path:'catalog',component:Catalog},
+  {path:'group-customer',component:GroupCustomer}
 ];
 
 @NgModule({

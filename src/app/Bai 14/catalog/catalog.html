@@ -1,0 +1,35 @@
+<p>catalog works!</p>
+<table border="1" width="369">
+  <tr>
+    <td width="50%">Ma Danh Muc</td>
+    <td width="50%">Ten Danh Muc</td>
+  </tr>
+</table>
+
+@for (cate of categories(); track cate.Cateid) {
+  <table border="1" width="369">
+    <tr>
+      <td width="50%">{{ cate.Cateid }}</td>
+      <td width="50%" >{{ cate.CateName }}</td>
+    </tr>
+  </table>
+
+  <table border="1" >
+    <tr>
+      <th>Ma San Pham</th>
+      <th>Ten San Pham</th>
+      <th>Gia San Pham</th>
+      <th>Picture</th>
+    </tr>
+    @for (p of cate.Products; track p.ProductId) {
+      <tr>
+        <td>{{ p.ProductId }}</td>
+        <td>{{ p.ProductName }}</td>
+        <td>{{ p.Price }}</td>
+        <td>
+          <img [src]="p.Image" width="50" height="50"/>
+        </td>
+      </tr>
+    }
+  </table>
+}
